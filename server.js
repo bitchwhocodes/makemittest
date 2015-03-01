@@ -10,7 +10,8 @@ app.get('/webhook_url', function (req, res) {
     if(request.body){
         //res.setHeader('Content-Type', 'application/json');
    // res.end(request.body);
-   res.end("stacey");
+      res.setHeader('Content-Type', 'text/plain');
+      res.end("stacey");
 }else{
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end(req.query.venmo_challenge);
